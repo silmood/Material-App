@@ -23,7 +23,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/header_image_size"
             android:layout_height="@dimen/header_image_size"
-            android:src="@drawable/petter"/>
+            android:src="@drawable/logo_dev_f"/>
 
         <TextView
             android:layout_width="match_parent"
