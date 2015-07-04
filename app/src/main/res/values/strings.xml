@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Material app</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="header_description">My cool image</string>
+    <string name="inbox_label">Inbox</string>
+    <string name="starred_label">Starred</string>
+    <string name="draft_label">Drafts</string>
+</resources>
