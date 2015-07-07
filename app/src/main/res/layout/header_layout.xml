@@ -21,6 +21,7 @@
         android:paddingTop="32dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
             android:layout_width="@dimen/header_image_size"
             android:layout_height="@dimen/header_image_size"
             android:src="@drawable/logo_dev_f"/>

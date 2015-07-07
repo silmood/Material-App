@@ -16,6 +16,12 @@
 
     </style>
 
+    <style name="Base.AppTheme.Navigation" parent="Base.AppTheme">
+
+
+    </style>
+
+
     <style name="AppTheme" parent="Base.AppTheme">
 
     </style>

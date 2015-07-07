@@ -2,12 +2,12 @@ package com.silmood.materialapp;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -34,19 +34,46 @@ public class MainActivity extends ActionBarActivity {
 
         ButterKnife.bind(this);
 
+        remplaceToolbar();
 
+        setupNavigationVIew();
+    }
+
+
+    private void setupNavigationVIew() {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                menuItem.getItemId();
+
+                switch (menuItem.getItemId()) {
+                    case R.id.inbox:
+                        replaceFragment(MyFragment.newInstance(menuItem.getTitle().toString()));
+                        break;
+                    case R.id.starred:
+                        replaceFragment(MyFragment.newInstance(menuItem.getTitle().toString()));
+                        break;
+                    case R.id.drafts:
+                        replaceFragment(MyFragment.newInstance(menuItem.getTitle().toString()));
+                        break;
+                }
+
+                menuItem.setChecked(true);
+                drawerLayout.closeDrawers();
                 return false;
             }
         });
-
-        remplaceToolbar();
     }
 
+
+    private void replaceFragment(Fragment newFragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, newFragment)
+                .commit();
+    }
+
+
     private void remplaceToolbar() {
+
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -67,9 +94,7 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-
             drawerLayout.openDrawer(GravityCompat.START);
-
             return true;
         }
 
